@@ -246,7 +246,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1405423895}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
 --- !u!65 &745555225
 BoxCollider:
@@ -342,7 +342,7 @@ Transform:
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 1405423895}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &766632039
 MonoBehaviour:
@@ -609,6 +609,7 @@ GameObject:
   - component: {fileID: 1405423895}
   - component: {fileID: 1405423894}
   - component: {fileID: 1405423893}
+  - component: {fileID: 1405423896}
   m_Layer: 0
   m_Name: _Hero
   m_TagString: Untagged
@@ -660,11 +661,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1534987775}
-  - {fileID: 745555224}
   - {fileID: 766632038}
+  - {fileID: 745555224}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1405423896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405423892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a584b759852929b4bb6cf4786b354d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 4
+  camWidth: 0
+  camHeight: 0
 --- !u!1 &1534987774
 GameObject:
   m_ObjectHideFlags: 0
