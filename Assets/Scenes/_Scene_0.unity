@@ -687,6 +687,7 @@ MonoBehaviour:
   speed: 30
   rollMult: -45
   pitchMult: 30
+  gameRestartDelay: 2
   _shieldLevel: 1
 --- !u!4 &1405423895
 Transform:
