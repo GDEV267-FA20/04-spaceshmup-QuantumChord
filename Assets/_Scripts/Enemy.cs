@@ -14,6 +14,13 @@ public class Enemy : MonoBehaviour
 
     public int score = 100;
 
+    private BoundsCheck bndCheck;
+
+    void Awake()
+    {
+        bndCheck = GetComponent<BoundsCheck>();
+    }
+
     //This is a Property: A method that acts like a field
 
     public Vector3 pos
@@ -32,6 +39,14 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         Move();
+
+        if (bndCheck != null && bndCheck.offDown)
+        {
+            //We're off the bottom, so destroy this GameObject
+
+            Destroy(gameObject);
+            
+        }
     }
 
     public virtual void Move()
