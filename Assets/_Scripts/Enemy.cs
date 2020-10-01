@@ -62,11 +62,15 @@ public class Enemy : MonoBehaviour
     {
         GameObject otherGO = coll.gameObject;
 
+        print("Collision occured");
+
         if (otherGO.tag == "ProjectileHero")
         {
             Destroy(otherGO);
 
             Destroy(gameObject);
+
+            print("Destroy: " + otherGO + " and " + gameObject);
         }
 
         else
