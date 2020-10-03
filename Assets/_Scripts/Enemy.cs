@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     public int score = 100;
 
-    private BoundsCheck bndCheck;
+    protected BoundsCheck bndCheck;
 
     void Awake()
     {
