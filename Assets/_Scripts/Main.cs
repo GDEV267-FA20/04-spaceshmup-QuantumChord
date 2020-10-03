@@ -15,6 +15,8 @@ public class Main : MonoBehaviour
 
     public float enemyDefaultPadding = 1.5f;
 
+    public WeaponDefinition[] weaponDefinitions;
+
     private BoundsCheck bndCheck;
 
     void Awake()
