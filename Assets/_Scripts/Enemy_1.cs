@@ -37,7 +37,6 @@ public class Enemy_1 : Enemy
     public override void Move()
     {
         //Because pos is a property, you can't directly set pos.x
-
         // So get the pos as an editable Vector3
 
         Vector3 tempPos = pos;
