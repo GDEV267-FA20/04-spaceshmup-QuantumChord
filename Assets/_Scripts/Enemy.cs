@@ -14,11 +14,37 @@ public class Enemy : MonoBehaviour
 
     public int score = 100;
 
+    public float showDamageDuration = 0.1f;
+
+    [Header("Set Dynamically: Enemy")]
+
+    public Color[] originalColors;
+
+    public Material[] materials;
+
+    public bool showingDamage = false;
+
+    public float damageDoneTime;
+
+    public bool notifiedOfDestruction = false;
+
+
     protected BoundsCheck bndCheck;
 
     void Awake()
     {
         bndCheck = GetComponent<BoundsCheck>();
+
+        //Get materials and colors for this GameObject and its children
+
+        materials = Utils.GetAllMaterials(gameObject);
+
+        originalColors = new Color[materials.Length];
+
+        for(int i = 0; i<materials.Length; i++)
+        {
+            originalColors[i] = materials[i].color;
+        }
     }
 
     //This is a Property: A method that acts like a field
@@ -39,6 +65,11 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         Move();
+
+        if(showingDamage && Time.time > damageDoneTime)
+        {
+            UnShowDamage();
+        }
 
         if (bndCheck != null && bndCheck.offDown)
         {
@@ -78,6 +109,9 @@ public class Enemy : MonoBehaviour
                 }
 
                 //Hurt this Enemy
+
+                ShowDamage();
+
                 //Get the damage amount from the Main WEAP_DICT.
 
                 health -= Main.GetWeaponDefinition(p.type).damageOnHit;
@@ -99,5 +133,27 @@ public class Enemy : MonoBehaviour
 
                 break;
         }
+    }
+
+    void ShowDamage()
+    {
+        foreach(Material m in materials)
+        {
+            m.color = Color.red;
+        }
+
+        showingDamage = true;
+
+        damageDoneTime = Time.time + showDamageDuration;
+    }
+
+    void UnShowDamage()
+    {
+        for(int i = 0; i<materials.Length; i++)
+        {
+            materials[i].color = originalColors[i];
+        }
+
+        showingDamage = false;
     }
 }
