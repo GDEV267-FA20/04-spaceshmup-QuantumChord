@@ -22,6 +22,8 @@ public class Hero : MonoBehaviour
 
     public float projectileSpeed = 40;
 
+    public Weapon[] weapons;
+
     [Header("Set Dynamically")]
 
     [SerializeField]
@@ -136,10 +138,30 @@ public class Hero : MonoBehaviour
 
             Destroy(go);
         }
+
+        else if (go.tag == "PowerUp")
+        {
+            //If the sheild was triggered by a PowerUp
+
+            AbsorbPowerUp(go);
+        }
+
         else
         {
             print("Triggered by non-Enemy:" + go.name);
         }
+    }
+
+    public void AbsorbPowerUp(GameObject go)
+    {
+        PowerUp pu = go.GetComponent<PowerUp>();
+
+        switch (pu.type)
+        {
+            
+        }
+
+        pu.AbsorbedBy(this.gameObject);
     }
 
     public float shieldLevel
