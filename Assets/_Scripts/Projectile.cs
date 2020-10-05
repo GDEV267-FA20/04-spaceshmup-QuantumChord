@@ -27,7 +27,7 @@ public class Projectile : MonoBehaviour
 
         set
         {
-            setType(value);
+            SetType(value);
         }
     }
 
@@ -54,7 +54,7 @@ public class Projectile : MonoBehaviour
     /// </summary>
     /// <param name="eType">The WeaponType to use.</param>
     
-    public void setType(WeaponType eType)
+    public void SetType(WeaponType eType)
     {
         //Set the _type
 

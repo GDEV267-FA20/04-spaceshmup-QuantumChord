@@ -32,6 +32,15 @@ public class Main : MonoBehaviour
         //Invoke SpawnEnemy() once (in 2 seconds based on default values)
 
         Invoke("SpawnEnemy", 1f / enemySpawnPerSecond);
+
+        //A generic Dicitonary with WeaponType as the key
+
+        WEAP_DICT = new Dictionary<WeaponType, WeaponDefinition>();
+
+        foreach (WeaponDefinition def in weaponDefinitions)
+        {
+            WEAP_DICT[def.type] = def;
+        }
     }
 
     public void SpawnEnemy()
@@ -68,15 +77,6 @@ public class Main : MonoBehaviour
         //Invoke SpawnEnemy() again
 
         Invoke("SpawnEnemy", 1f / enemySpawnPerSecond);
-
-        //A generic Dicitonary with WeaponType as the key
-
-        WEAP_DICT = new Dictionary<WeaponType, WeaponDefinition>();
-
-        foreach(WeaponDefinition def in weaponDefinitions)
-        {
-            WEAP_DICT[def.type] = def;
-        }
     }
 
     public void DelayedRestart(float delay)
