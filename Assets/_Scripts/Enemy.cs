@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
 
     public float showDamageDuration = 0.1f;
 
+    public float powerUpDropChance = 1f;
+
     [Header("Set Dynamically: Enemy")]
 
     public Color[] originalColors;
@@ -118,6 +120,15 @@ public class Enemy : MonoBehaviour
 
                 if(health <= 0)
                 {
+                    //Tell the Main Singleton that this ship was destroyed
+
+                    if (!notifiedOfDestruction)
+                    {
+                        Main.S.ShipDestroyed(this);
+                    }
+
+                    notifiedOfDestruction = true;
+
                     //Destroy this Enemy
 
                     Destroy(this.gameObject);
