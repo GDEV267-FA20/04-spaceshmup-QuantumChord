@@ -94,7 +94,7 @@ public class PowerUp : MonoBehaviour
 
         //and then fade out over 4 seconds
 
-        float u = (Time.time - (birthTime + lifeTime) / fadeTime);
+        float u = (Time.time - (birthTime + lifeTime)) / fadeTime;
 
         //For lifeTime seconds, u will be <=0. Then it will transition into
         
