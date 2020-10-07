@@ -640,7 +640,7 @@ MonoBehaviour:
     delayBetweenShots: 0
     velocity: 0
   prefabPowerUp: {fileID: 2427202828879138253, guid: b5ad4cb1a28cd9a439aca9a2c2db692a, type: 3}
-  powerUpFrequency: 01000000010000000200000006000000
+  powerUpFrequency: 0100000001000000020000000600000005000000
 --- !u!114 &840189739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1461,7 +1461,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 704522381403692085, guid: ecb5181dc48ede64fad289a9ae231a5f, type: 3}
       propertyPath: _type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 704522381403692085, guid: ecb5181dc48ede64fad289a9ae231a5f, type: 3}
       propertyPath: collar
