@@ -16,7 +16,7 @@ public enum WeaponType
 
     spread,     //Two shots simultaneously
 
-    phaser,     //[NI] Shots that move in waves
+    phaser,     //Shots that move in waves
 
     missile,        //[NI] Homing missiles
 
@@ -180,6 +180,14 @@ public class Weapon: MonoBehaviour
                 p.rigid.velocity = p.transform.rotation * vel;
 
                 break;
+
+           /* case WeaponType.laser:
+
+                p = MakeProjectile();
+
+                p.rigid.velocity = vel;
+
+                break;*/
         }
     }
 

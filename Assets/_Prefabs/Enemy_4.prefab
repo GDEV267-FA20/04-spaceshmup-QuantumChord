@@ -344,7 +344,7 @@ MonoBehaviour:
   powerUpDropChance: 1
   originalColors: []
   materials: []
-  showingDamage: 0
+  showingDamage: 1
   damageDoneTime: 0
   notifiedOfDestruction: 0
   parts:
